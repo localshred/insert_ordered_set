@@ -7,6 +7,8 @@ defmodule InsertOrderedSet.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -16,7 +18,7 @@ defmodule InsertOrderedSet.Mixfile do
 
   defp deps do
     [
-      { :dogma, "~> 0.0" },
+      { :dogma, "~> 0.0", only: ~w(dev test)a },
     ]
   end
 
@@ -33,7 +35,7 @@ defmodule InsertOrderedSet.Mixfile do
   defp package do
     [
      files: ["lib", "mix.exs", "README.md", "LICENSE"],
-     contributors: ["BJ Neilsen"],
+     maintainers: ["BJ Neilsen"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/localshred/insert_ordered_set"}
     ]
